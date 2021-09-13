@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+            color: #fff;
+            position: relative;
+        }
+        
+        .loading {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #fff;
+            border-radius: 30% 70% 70% 30% / 30% 29% 71% 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 5s linear infinite;
+        }
+        
+        .loading::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #fff;
+            border-radius: 30% 70% 20% 80% / 51% 29% 71% 49%;
+            animation: rotate 5s linear infinite;
+            animation-delay: .5s;
+        }
+        
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #fff;
+            border-radius: 71% 29% 20% 80% / 83% 29% 71% 17%;
+            animation: rotate 5s linear infinite;
+            animation-delay: .10s;
+        }
+        
+        .loading span {
+            font-size: 1.6em;
+            animation: rotate_span 5s linear infinite;
+        }
+        
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes rotate_span {
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading">
+        <span>Loading...</span>
+    </div>
+</body>
+
+</html>
